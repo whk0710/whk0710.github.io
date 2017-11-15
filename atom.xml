@@ -3,11 +3,11 @@
   <title>WHK0710</title>
   
   <subtitle>大音希声，大象无形</subtitle>
-  <link href="/blog/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="http://whk0710.github.io/blog/"/>
+  <link href="http://whk0710.github.io/"/>
   <updated>2017-11-15T13:55:40.964Z</updated>
-  <id>http://whk0710.github.io/blog/</id>
+  <id>http://whk0710.github.io/</id>
   
   <author>
     <name>whk0710</name>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>Hexo+Github搭建静态博客</title>
-    <link href="http://whk0710.github.io/blog/2017/11/15/Hexo-Github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://whk0710.github.io/blog/2017/11/15/Hexo-Github搭建静态博客/</id>
+    <link href="http://whk0710.github.io/2017/11/15/Hexo-Github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://whk0710.github.io/2017/11/15/Hexo-Github搭建静态博客/</id>
     <published>2017-11-15T13:14:58.000Z</published>
     <updated>2017-11-15T13:55:40.964Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="假装是个标题"><a href="#假装是个标题" class="headerlink" title="假装是个标题"></a>假装是个标题</h3><p>首先说一下为什么写这么个博客，在网上你可以搜到一大堆教你如何用hexo搭建博客的教程。</p><p>那我为什么还要写呢？</p><p>很简单，我是为了练习一下markdown语法、顺便记录一下自己搭博客的心路历程吧，虽然挺简单的。</p><p>我想先吐槽一下，为啥我的段落行间距这么大呢，看了一下我用的主题css文件里，p标签的margin属性上下不是0，这主题就这样吧，保持原汁原味吧不改了。</p><h3 id="开始吧"><a href="#开始吧" class="headerlink" title="开始吧"></a>开始吧</h3><p>首先你需要准备一下：</p><ol><li>一个可以用的github账号，<a href="https://github.com/" target="_blank" rel="external">注册地址</a></li><li>安装git软件，<a href="https://git-scm.com/download/win" target="_blank" rel="external">下载地址</a></li><li>一台差不多的电脑</li><li>一个还算清醒的大脑</li></ol><p>准备完毕后，好，开搞。</p><p>登陆<a href="https://github.com/" target="_blank" rel="external">github网站</a>，点击new repository创建新仓库，页面以及仓库名如下图：<br><img src="/blog/blog/2017/11/15/Hexo-Github搭建静态博客/new_repo.png" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="假装是个标题"><a href="#假装是个标题" class="headerlink" title="假装是个标题"></a>假装是个标题</h3><p>首先说一下为什么写这么个博客，在网上你可以搜到一大堆教你如何用hexo搭建博客的教程。</p><p>那我为什么还要写呢？</p><p>很简单，我是为了练习一下markdown语法、顺便记录一下自己搭博客的心路历程吧，虽然挺简单的。</p><p>我想先吐槽一下，为啥我的段落行间距这么大呢，看了一下我用的主题css文件里，p标签的margin属性上下不是0，这主题就这样吧，保持原汁原味吧不改了。</p><h3 id="开始吧"><a href="#开始吧" class="headerlink" title="开始吧"></a>开始吧</h3><p>首先你需要准备一下：</p><ol><li>一个可以用的github账号，<a href="https://github.com/" target="_blank" rel="external">注册地址</a></li><li>安装git软件，<a href="https://git-scm.com/download/win" target="_blank" rel="external">下载地址</a></li><li>一台差不多的电脑</li><li>一个还算清醒的大脑</li></ol><p>准备完毕后，好，开搞。</p><p>登陆<a href="https://github.com/" target="_blank" rel="external">github网站</a>，点击new repository创建新仓库，页面以及仓库名如下图：<br><img src="/2017/11/15/Hexo-Github搭建静态博客/new_repo.png" alt=""></p>]]></content>
     
     <summary type="html">
     
@@ -35,15 +35,15 @@
     
     </summary>
     
-      <category term="不技术的技术" scheme="http://whk0710.github.io/blog/categories/%E4%B8%8D%E6%8A%80%E6%9C%AF%E7%9A%84%E6%8A%80%E6%9C%AF/"/>
+      <category term="不技术的技术" scheme="http://whk0710.github.io/categories/%E4%B8%8D%E6%8A%80%E6%9C%AF%E7%9A%84%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
   
   <entry>
     <title>2017年11月6日</title>
-    <link href="http://whk0710.github.io/blog/2017/11/06/2017%E5%B9%B411%E6%9C%886%E6%97%A5/"/>
-    <id>http://whk0710.github.io/blog/2017/11/06/2017年11月6日/</id>
+    <link href="http://whk0710.github.io/2017/11/06/2017%E5%B9%B411%E6%9C%886%E6%97%A5/"/>
+    <id>http://whk0710.github.io/2017/11/06/2017年11月6日/</id>
     <published>2017-11-06T02:32:39.000Z</published>
     <updated>2017-11-06T02:33:26.088Z</updated>
     
@@ -59,15 +59,15 @@
     
     </summary>
     
-      <category term="一句话日记" scheme="http://whk0710.github.io/blog/categories/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%97%A5%E8%AE%B0/"/>
+      <category term="一句话日记" scheme="http://whk0710.github.io/categories/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%97%A5%E8%AE%B0/"/>
     
     
   </entry>
   
   <entry>
     <title>2017年10月27日</title>
-    <link href="http://whk0710.github.io/blog/2017/10/27/2017%E5%B9%B410%E6%9C%8827%E6%97%A5/"/>
-    <id>http://whk0710.github.io/blog/2017/10/27/2017年10月27日/</id>
+    <link href="http://whk0710.github.io/2017/10/27/2017%E5%B9%B410%E6%9C%8827%E6%97%A5/"/>
+    <id>http://whk0710.github.io/2017/10/27/2017年10月27日/</id>
     <published>2017-10-27T05:37:28.000Z</published>
     <updated>2017-10-27T05:38:06.826Z</updated>
     
@@ -83,15 +83,15 @@
     
     </summary>
     
-      <category term="一句话日记" scheme="http://whk0710.github.io/blog/categories/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%97%A5%E8%AE%B0/"/>
+      <category term="一句话日记" scheme="http://whk0710.github.io/categories/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%97%A5%E8%AE%B0/"/>
     
     
   </entry>
   
   <entry>
     <title>2017年10月10日</title>
-    <link href="http://whk0710.github.io/blog/2017/10/10/2017%E5%B9%B410%E6%9C%8810%E6%97%A5/"/>
-    <id>http://whk0710.github.io/blog/2017/10/10/2017年10月10日/</id>
+    <link href="http://whk0710.github.io/2017/10/10/2017%E5%B9%B410%E6%9C%8810%E6%97%A5/"/>
+    <id>http://whk0710.github.io/2017/10/10/2017年10月10日/</id>
     <published>2017-10-10T08:19:07.000Z</published>
     <updated>2017-10-10T08:19:43.455Z</updated>
     
@@ -107,15 +107,15 @@
     
     </summary>
     
-      <category term="一句话日记" scheme="http://whk0710.github.io/blog/categories/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%97%A5%E8%AE%B0/"/>
+      <category term="一句话日记" scheme="http://whk0710.github.io/categories/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%97%A5%E8%AE%B0/"/>
     
     
   </entry>
   
   <entry>
     <title>2017年10月09日</title>
-    <link href="http://whk0710.github.io/blog/2017/10/09/2017%E5%B9%B410%E6%9C%8809%E6%97%A5/"/>
-    <id>http://whk0710.github.io/blog/2017/10/09/2017年10月09日/</id>
+    <link href="http://whk0710.github.io/2017/10/09/2017%E5%B9%B410%E6%9C%8809%E6%97%A5/"/>
+    <id>http://whk0710.github.io/2017/10/09/2017年10月09日/</id>
     <published>2017-10-09T13:12:00.000Z</published>
     <updated>2017-10-09T13:12:41.824Z</updated>
     
@@ -131,15 +131,15 @@
     
     </summary>
     
-      <category term="一句话日记" scheme="http://whk0710.github.io/blog/categories/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%97%A5%E8%AE%B0/"/>
+      <category term="一句话日记" scheme="http://whk0710.github.io/categories/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%97%A5%E8%AE%B0/"/>
     
     
   </entry>
   
   <entry>
     <title>2017年10月2日</title>
-    <link href="http://whk0710.github.io/blog/2017/10/02/2017%E5%B9%B410%E6%9C%882%E6%97%A5/"/>
-    <id>http://whk0710.github.io/blog/2017/10/02/2017年10月2日/</id>
+    <link href="http://whk0710.github.io/2017/10/02/2017%E5%B9%B410%E6%9C%882%E6%97%A5/"/>
+    <id>http://whk0710.github.io/2017/10/02/2017年10月2日/</id>
     <published>2017-10-02T01:47:48.000Z</published>
     <updated>2017-10-02T01:48:46.797Z</updated>
     
@@ -155,15 +155,15 @@
     
     </summary>
     
-      <category term="一句话日记" scheme="http://whk0710.github.io/blog/categories/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%97%A5%E8%AE%B0/"/>
+      <category term="一句话日记" scheme="http://whk0710.github.io/categories/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%97%A5%E8%AE%B0/"/>
     
     
   </entry>
   
   <entry>
     <title>2017年9月30日</title>
-    <link href="http://whk0710.github.io/blog/2017/09/30/2017%E5%B9%B49%E6%9C%8830%E6%97%A5/"/>
-    <id>http://whk0710.github.io/blog/2017/09/30/2017年9月30日/</id>
+    <link href="http://whk0710.github.io/2017/09/30/2017%E5%B9%B49%E6%9C%8830%E6%97%A5/"/>
+    <id>http://whk0710.github.io/2017/09/30/2017年9月30日/</id>
     <published>2017-09-30T11:36:10.000Z</published>
     <updated>2017-09-30T11:36:53.032Z</updated>
     
@@ -179,15 +179,15 @@
     
     </summary>
     
-      <category term="一句话日记" scheme="http://whk0710.github.io/blog/categories/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%97%A5%E8%AE%B0/"/>
+      <category term="一句话日记" scheme="http://whk0710.github.io/categories/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%97%A5%E8%AE%B0/"/>
     
     
   </entry>
   
   <entry>
     <title>2017年9月26日</title>
-    <link href="http://whk0710.github.io/blog/2017/09/26/2017%E5%B9%B49%E6%9C%8826%E6%97%A5/"/>
-    <id>http://whk0710.github.io/blog/2017/09/26/2017年9月26日/</id>
+    <link href="http://whk0710.github.io/2017/09/26/2017%E5%B9%B49%E6%9C%8826%E6%97%A5/"/>
+    <id>http://whk0710.github.io/2017/09/26/2017年9月26日/</id>
     <published>2017-09-26T02:57:20.000Z</published>
     <updated>2017-09-26T02:57:58.882Z</updated>
     
@@ -203,15 +203,15 @@
     
     </summary>
     
-      <category term="一句话日记" scheme="http://whk0710.github.io/blog/categories/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%97%A5%E8%AE%B0/"/>
+      <category term="一句话日记" scheme="http://whk0710.github.io/categories/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%97%A5%E8%AE%B0/"/>
     
     
   </entry>
   
   <entry>
     <title>自勉</title>
-    <link href="http://whk0710.github.io/blog/2017/09/14/%E8%87%AA%E5%8B%89/"/>
-    <id>http://whk0710.github.io/blog/2017/09/14/自勉/</id>
+    <link href="http://whk0710.github.io/2017/09/14/%E8%87%AA%E5%8B%89/"/>
+    <id>http://whk0710.github.io/2017/09/14/自勉/</id>
     <published>2017-09-14T03:22:54.000Z</published>
     <updated>2017-09-14T03:23:19.885Z</updated>
     
@@ -232,8 +232,8 @@
   
   <entry>
     <title>2017年9月14日</title>
-    <link href="http://whk0710.github.io/blog/2017/09/14/2017%E5%B9%B49%E6%9C%8814%E6%97%A5/"/>
-    <id>http://whk0710.github.io/blog/2017/09/14/2017年9月14日/</id>
+    <link href="http://whk0710.github.io/2017/09/14/2017%E5%B9%B49%E6%9C%8814%E6%97%A5/"/>
+    <id>http://whk0710.github.io/2017/09/14/2017年9月14日/</id>
     <published>2017-09-13T23:45:39.000Z</published>
     <updated>2017-09-13T23:46:29.208Z</updated>
     
@@ -249,15 +249,15 @@
     
     </summary>
     
-      <category term="一句话日记" scheme="http://whk0710.github.io/blog/categories/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%97%A5%E8%AE%B0/"/>
+      <category term="一句话日记" scheme="http://whk0710.github.io/categories/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%97%A5%E8%AE%B0/"/>
     
     
   </entry>
   
   <entry>
     <title>2017年9月13日</title>
-    <link href="http://whk0710.github.io/blog/2017/09/13/2017%E5%B9%B49%E6%9C%8813%E6%97%A5/"/>
-    <id>http://whk0710.github.io/blog/2017/09/13/2017年9月13日/</id>
+    <link href="http://whk0710.github.io/2017/09/13/2017%E5%B9%B49%E6%9C%8813%E6%97%A5/"/>
+    <id>http://whk0710.github.io/2017/09/13/2017年9月13日/</id>
     <published>2017-09-13T01:20:38.000Z</published>
     <updated>2017-09-13T01:26:05.473Z</updated>
     
@@ -273,15 +273,15 @@
     
     </summary>
     
-      <category term="一句话日记" scheme="http://whk0710.github.io/blog/categories/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%97%A5%E8%AE%B0/"/>
+      <category term="一句话日记" scheme="http://whk0710.github.io/categories/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%97%A5%E8%AE%B0/"/>
     
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://whk0710.github.io/blog/2017/09/07/hello-world/"/>
-    <id>http://whk0710.github.io/blog/2017/09/07/hello-world/</id>
+    <link href="http://whk0710.github.io/2017/09/07/hello-world/"/>
+    <id>http://whk0710.github.io/2017/09/07/hello-world/</id>
     <published>2017-09-07T02:55:47.864Z</published>
     <updated>2017-09-07T09:01:24.595Z</updated>
     
