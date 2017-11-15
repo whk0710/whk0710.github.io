@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://whk0710.github.io/blog/"/>
-  <updated>2017-11-15T13:52:23.731Z</updated>
+  <updated>2017-11-15T13:55:40.964Z</updated>
   <id>http://whk0710.github.io/blog/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://whk0710.github.io/blog/2017/11/15/Hexo-Github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"/>
     <id>http://whk0710.github.io/blog/2017/11/15/Hexo-Github搭建静态博客/</id>
     <published>2017-11-15T13:14:58.000Z</published>
-    <updated>2017-11-15T13:52:23.731Z</updated>
+    <updated>2017-11-15T13:55:40.964Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="假装是个标题"><a href="#假装是个标题" class="headerlink" title="假装是个标题"></a>假装是个标题</h3><p>首先说一下为什么写这么个博客，在网上你可以搜到一大堆教你如何用hexo搭建博客的教程。</p><p>那我为什么还要写呢？</p><p>很简单，我是为了练习一下markdown语法、顺便记录一下自己搭博客的心路历程吧，虽然挺简单的。</p><p>我想先吐槽一下，为啥我的段落行间距这么大呢，看了一下我用的主题css文件里，p标签的margin属性上下不是0，这主题就这样吧，保持原汁原味吧不改了。</p><h3 id="开始吧"><a href="#开始吧" class="headerlink" title="开始吧"></a>开始吧</h3><p>首先你需要准备一下：</p><ol><li>一个可以用的github账号，<a href="https://github.com/" target="_blank" rel="external">注册地址</a></li><li>安装git软件，<a href="https://git-scm.com/download/win" target="_blank" rel="external">下载地址</a></li><li>一台差不多的电脑</li><li>一个还算清醒的大脑</li></ol><p>准备完毕后，好，开搞。</p><p>登陆<a href="https://github.com/" target="_blank" rel="external">github网站</a>，点击new repository创建新仓库，页面以及仓库名如下图：<br><img src="/img/new_repo.png" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="假装是个标题"><a href="#假装是个标题" class="headerlink" title="假装是个标题"></a>假装是个标题</h3><p>首先说一下为什么写这么个博客，在网上你可以搜到一大堆教你如何用hexo搭建博客的教程。</p><p>那我为什么还要写呢？</p><p>很简单，我是为了练习一下markdown语法、顺便记录一下自己搭博客的心路历程吧，虽然挺简单的。</p><p>我想先吐槽一下，为啥我的段落行间距这么大呢，看了一下我用的主题css文件里，p标签的margin属性上下不是0，这主题就这样吧，保持原汁原味吧不改了。</p><h3 id="开始吧"><a href="#开始吧" class="headerlink" title="开始吧"></a>开始吧</h3><p>首先你需要准备一下：</p><ol><li>一个可以用的github账号，<a href="https://github.com/" target="_blank" rel="external">注册地址</a></li><li>安装git软件，<a href="https://git-scm.com/download/win" target="_blank" rel="external">下载地址</a></li><li>一台差不多的电脑</li><li>一个还算清醒的大脑</li></ol><p>准备完毕后，好，开搞。</p><p>登陆<a href="https://github.com/" target="_blank" rel="external">github网站</a>，点击new repository创建新仓库，页面以及仓库名如下图：<br><img src="/blog/blog/2017/11/15/Hexo-Github搭建静态博客/new_repo.png" alt=""></p>]]></content>
     
     <summary type="html">
     
