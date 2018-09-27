@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>ArrayList源码阅读记录 | WHK0710</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">ArrayList源码阅读记录</h1><a id="logo" href="/.">WHK0710</a><p class="description">大音希声，大象无形</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">ArrayList源码阅读记录</h1><div class="post-meta">Aug 26, 2018<span> | </span><span class="category"><a href="/categories/java源码阅读记录/">java源码阅读记录</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="post-content"><h3 id="一、要点"><a href="#一、要点" class="headerlink" title="一、要点"></a>一、要点</h3><p>1.集合类的特点</p>
+<p>2.数据结构、初始化、对象创建、构造器、初始参数</p>
+<p>3.元素的添加</p>
+<p>4.元素的获取</p>
+<p>5.元素的删除</p>
+<p>6.元素的遍历</p>
+<h3 id="二、源码解析（jdk1-7）"><a href="#二、源码解析（jdk1-7）" class="headerlink" title="二、源码解析（jdk1.7）"></a>二、源码解析（jdk1.7）</h3><h4 id="1-源码解析（jdk1-7）"><a href="#1-源码解析（jdk1-7）" class="headerlink" title="1.源码解析（jdk1.7）"></a>1.源码解析（jdk1.7）</h4><p>由源码可知：</p>
+<p><img src="/2018/08/26/ArrayList-source-code/1.png" alt=""></p>
+<p>此集合类继承AbstractList、实现List<e>, RandomAccess, Cloneable，Serializable，表明此类具有LIst（和数组）的特性，并且支持动态分配数组大小、随机访问，实现Cloneable表明：</e></p>
+<p><img src="/2018/08/26/ArrayList-source-code/2.png" alt=""></p>
+<p>该类的对象可以通过clone()方法进行拷贝，支持序列化。尾部插入快、随机读取快，删除，中间插入、删除慢.</p>
+<h4 id="2-成员变量、常量、参数、构造器"><a href="#2-成员变量、常量、参数、构造器" class="headerlink" title="2.成员变量、常量、参数、构造器"></a>2.成员变量、常量、参数、构造器</h4><p>参数有：</p>
+<p><img src="/2018/08/26/ArrayList-source-code/3.png" alt=""></p>
+<p>此成员变量表明，arraylist底层数据结构是由数组实现，用transient修饰表示序列化时，此变量不会序列化.</p>
+<p><img src="/2018/08/26/ArrayList-source-code/4.png" alt=""></p>
+<p>此变量为当前数组的大小（the number of elements it contains）</p>
+<p><img src="/2018/08/26/ArrayList-source-code/5.png" alt=""></p>
+<p>此常量为，该list包含数组元素的最大值.</p>
+<p>构造函数：</p>
+<p><strong>1）无参构造器</strong></p>
+<p><img src="/2018/08/26/ArrayList-source-code/6.png" alt=""></p>
+<p>调用public ArrayList(int initialCapacity) 构造器实现默认创建elementData为大小<strong><em>10</em></strong>的数组</p>
+<p><strong>2）public ArrayList(int initialCapacity)构造器</strong></p>
+<p><img src="/2018/08/26/ArrayList-source-code/7.png" alt=""></p>
+<p>传入一个包含特定对象的集合类，把这个集合类对象转为arraylist，首先会将此集合类转为数组，将此数组赋值给elementData，判断此数组是否为Object类数组对象，如果不是，通过Arrays.copyOf方法将其转为Object数组对象（注释中说，调用c.toArray方法可能返回的不是object类型）.</p>
+<h4 id="3-arraylist的add方法与set方法"><a href="#3-arraylist的add方法与set方法" class="headerlink" title="3.arraylist的add方法与set方法"></a>3.arraylist的add方法与set方法</h4><p><strong>1）boolean add(E e)</strong></p>
+<p><img src="/2018/08/26/ArrayList-source-code/8.png" alt=""></p>
+<p>直接添加元素，调用ensureCapacityInternal判断当前size+1会不会超过默认或自己只当的capacity；让elementData数组的第size位 = 这个新加入的元素，size++；每添加一个元素，size加1.</p>
+<p><img src="/2018/08/26/ArrayList-source-code/9.png" alt=""></p>
+<p>如果size+1大小超过了当前数组的默认或自己指定的length，则调用grow方法扩容（注意size和length是不同的，length是数组的length（默认为10或自己指定了），size是数组中元素的个数）.</p>
+<p><img src="/2018/08/26/ArrayList-source-code/10.png" alt=""></p>
+<p>grow方法，首先计算新的数组length = 原数组length + 原数组length 右移1位，也就是容量扩大为原来的1.5倍。然后判断此新容量跟传入的minCapacity比较如果新值小于此数，就直接扩容为minCapacity大小，</p>
+<p><img src="/2018/08/26/ArrayList-source-code/11.png" alt=""></p>
+<p>如果新容量大于最大限制阈值，会让新容量根据hugeCapacity判断选择容量：如果minCapacity大于了最大限制阈值，新容量 = int最大值，否则，新容量 = 最大限制阈值。</p>
+<p><strong>2）E set(int index, E element)方法</strong></p>
+<p><img src="/2018/08/26/ArrayList-source-code/12.png" alt=""></p>
+<p>将对应下标的元素设置为新值，并返回旧值，首先检查输入的index是否大于size，大于就抛异常：</p>
+<p><img src="/2018/08/26/ArrayList-source-code/13.png" alt=""></p>
+<p>否则就获取旧值，将index下的值 = 新传入的值，返回刚才获取的旧值.</p>
+<p><strong>3）void add(int index, E element)</strong></p>
+<p><img src="/2018/08/26/ArrayList-source-code/14.png" alt=""></p>
+<p>指定位置插入元素，线性时间复杂度。首先检查输入的index范围是否大于0并小于size，否则抛异常：</p>
+<p><img src="/2018/08/26/ArrayList-source-code/15.png" alt=""></p>
+<p>符合范围，就判断是否size+1超过length，超过就扩容。然后调用System.arraycopy(elementData, index, elementData, index + 1, size - index);方法，将原来index位置起的元素向后移动（每一个index后的元素向后移动一位）空出index出，然后将elementData[index] = element;并且size++。</p>
+<p><strong>4）boolean addAll(Collection&lt;? extends E&gt; c)</strong></p>
+<p><img src="/2018/08/26/ArrayList-source-code/16.png" alt=""></p>
+<p>将传入的集合类对象中的全部元素插入list中，首先将集合类对象转为数组a，判断是否超出length，超出扩容，调用System.arraycopy(a, 0, elementData, size, numNew);将数组a拷贝到elementData数组，System.arraycopy(Objec src,int srcPos,Object desc,int descPos,int length)意思是将从第0位开始的a数组中的全部元素，copy到elementData数组的size下标后，也就是将a插入到elementData数组的尾部。</p>
+<p><strong>5）boolean addAll(int index, Collection&lt;? extends E&gt; c)</strong></p>
+<p><img src="/2018/08/26/ArrayList-source-code/17.png" alt=""></p>
+<p>从index处将整个集合类插入到elementData数组，是需要将原数组index处元素后移集合类的length位置。</p>
+<h4 id="4-元素的获取get方法"><a href="#4-元素的获取get方法" class="headerlink" title="4.元素的获取get方法"></a>4.元素的获取get方法</h4><p><img src="/2018/08/26/ArrayList-source-code/18.png" alt=""></p>
+<p>检查是否输入的index比size大等，是抛异常，否则返回elementData[index]</p>
+<p><img src="/2018/08/26/ArrayList-source-code/19.png" alt=""></p>
+<h4 id="5-元素的删除"><a href="#5-元素的删除" class="headerlink" title="5.元素的删除"></a>5.元素的删除</h4><p><strong>1）E remove(int index)</strong></p>
+<p>移除指定位置的元素，返回旧值。线性时间复杂度</p>
+<p><img src="/2018/08/26/ArrayList-source-code/20.png" alt=""></p>
+<p>检查范围，如果index&gt;=size抛异常，否则，获取index旧值，保存以用于返回，计算需要移动的元素个数，将index处之后的所有元素向前移动一位，并将size减一.</p>
+<p><strong>2）boolean remove(Object o)</strong></p>
+<p><img src="/2018/08/26/ArrayList-source-code/21.png" alt=""></p>
+<p>移除指定元素，时间复杂度n^2？，会移除null元素，遍历数组判断输入的对象是否为空，为空调用fastRemove方法移除，不为空，通过equals方法判断是否有此元素，有也是调用fastRemove删除：</p>
+<p><img src="/2018/08/26/ArrayList-source-code/22.png" alt=""></p>
+<p>嗯？？？这不是remove（index）中的代码吗，，，这个程序员不合格，又重新写了一边。。思路就是先计算需要移动的元素个数，调用system.arraycopy将index处以后的元素每个向前移动一位，将size处的元素赋值为null，size–</p>
+<p><strong>3）void clear()方法</strong></p>
+<p><img src="/2018/08/26/ArrayList-source-code/23.png" alt=""></p>
+<p>作用是将数组每个元素置空，移除所有元素，简单粗暴，直接遍历赋值，并将size=0，牛逼。</p>
+<p><strong>4）void removeRange(int fromIndex, int toIndex)</strong></p>
+<p>移除指定范围的元素，线性时间复杂度</p>
+<p><img src="/2018/08/26/ArrayList-source-code/243.png" alt=""></p>
+<p>首先获取要移动的元素个数，然后调用system.arrycopy方法将elementData的toIndex处及以后的元素赋值到elementData的fromIndex以及以后的位置。然后给不需要的元素赋值空，size变化。</p>
+<p><strong>5）boolean removeAll(Collection&lt;?&gt; c)</strong></p>
+<p><img src="/2018/08/26/ArrayList-source-code/25.png" alt=""></p>
+<p><img src="/2018/08/26/ArrayList-source-code/26.png" alt=""></p>
+<p>移除输入集合类的元素</p>
+<h4 id="6-遍历"><a href="#6-遍历" class="headerlink" title="6.遍历"></a>6.遍历</h4><p><strong>1）迭代器遍历</strong></p>
+<p><img src="/2018/08/26/ArrayList-source-code/27.png" alt=""></p>
+<p>new Itr实现，Itr内部类：</p>
+<p><img src="/2018/08/26/ArrayList-source-code/28.png" alt=""></p>
+<p><img src="/2018/08/26/ArrayList-source-code/29.png" alt=""></p>
+<p>cursor表示当前遍历到的index游标，hasNext判断当前cursor是否等于size，等于返回false，表示已遍历完，否则还没遍历完</p>
+<p>next方法：思路就是，记录原来cursor，让当前cursor+1，然后返回数组中原cursor处的元素</p>
+<p>remove方法：思路是调用arraylist的remove(index)方法，并改变cursor.</p>
+</div><div class="tags"></div><div class="post-nav"><a href="/2018/09/27/Vector源码阅读记录/" class="pre">Vector源码阅读记录</a><a href="/2018/06/04/找工作准备/" class="next">面试与笔试</a></div><div id="container"></div><link rel="stylesheet" href="/css/default.css?v=0.0.0"><script src="/js/gitment.browser.js?v=0.0.0"></script><script>var gitment = new Gitment({
+  owner: 'whk0710',
+  repo: 'whk0710.github.io',
+  oauth: {
+    client_id: '4c27a456186dcab7a300',
+    client_secret: '27524bb1939bb23a11d43fac95f4acc7245dfa7c',
+  },
+})
+gitment.render('container')
+</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://whk0710.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/java源码阅读记录/">java源码阅读记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/不技术的技术/">不技术的技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/玄学杂谈/">玄学杂谈</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/09/27/HashSet源码阅读记录/">HashSet源码阅读记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/27/HashMap源码阅读记录/">HashMap源码阅读记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/27/Stack源码阅读记录/">Stack源码阅读记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/27/Vector源码阅读记录/">Vector源码阅读记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/26/ArrayList-source-code/">ArrayList源码阅读记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/04/找工作准备/">面试与笔试</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/11/Spring-study/">Spring study</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/16/奇妙的八卦/">奇妙的八卦</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/15/Hexo-Github搭建静态博客/">Hexo+Github搭建静态博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/14/自勉/">自勉</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://weibo.com/whk0710" title="微博" target="_blank">微博</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">WHK0710.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" color="123,104,238" opacity="0.5" zIndex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
